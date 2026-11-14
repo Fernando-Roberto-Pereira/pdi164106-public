@@ -54,8 +54,8 @@ def plot_results(img1: np.ndarray, img2: np.ndarray, mean_grid: list[dict[str, A
 
 def main() -> None:
     # Carrega as imagens locais
-    img01 = cv2.imread(os.path.join(Path(__file__).parent, "img01.jpeg"), cv2.IMREAD_GRAYSCALE)
-    img02 = cv2.imread(os.path.join(Path(__file__).parent, "img02_m_30.0_dp_40.0.jpeg"), cv2.IMREAD_GRAYSCALE)
+    img01 = cv2.imread(os.path.join(str(Path(__file__).parent).replace("src", "images"), "img01.jpeg"), cv2.IMREAD_GRAYSCALE)
+    img02 = cv2.imread(os.path.join(str(Path(__file__).parent).replace("src", "output"), "img02_m_30.0_dp_40.0.jpeg"), cv2.IMREAD_GRAYSCALE)
 
     # Define os parâmetros e executa o Grid Search para o Filtro Média
     mean_params = {
