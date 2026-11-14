@@ -1,4 +1,4 @@
-matplotlib
-opencv-python
 numpy
-dotenv
+opencv-python
+matplotlib
+python-dotenv
