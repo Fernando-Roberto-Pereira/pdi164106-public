@@ -14,7 +14,6 @@ def grid_search(params: dict[str, Any]) -> list[dict[str, Any]]:
         for values in itertools.product(*params.values())
     ]
 
-
 def plot_results(img1: np.ndarray, img2: np.ndarray, mean_grid: list[dict[str, Any]], gaussian_grid: list[dict[str, Any]],
 ) -> None:
     fig, axs = plt.subplots(2, 2, figsize=(12, 8))
@@ -53,7 +52,6 @@ def plot_results(img1: np.ndarray, img2: np.ndarray, mean_grid: list[dict[str, A
     plt.tight_layout()
     plt.show()
 
-
 def main() -> None:
     # Carrega as imagens locais
     img01 = cv2.imread(os.path.join(Path(__file__).parent, "img01.jpeg"), cv2.IMREAD_GRAYSCALE)
@@ -80,7 +78,6 @@ def main() -> None:
 
     # Plota as imagens e os gráficos dos experimentos
     plot_results(img01, img02, mean_grid, gaussian_grid)
-
 
 if __name__ == "__main__":
     main()
