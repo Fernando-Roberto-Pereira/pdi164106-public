@@ -6,219 +6,141 @@
   <title>Atividade prática</title>
 </head>
 <body>
-<!-- CONTAINER PRINCIPAL (ALINHADO À ESQUERDA E 100% LARGURA) -->
+
 <div
   style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
-  <!-- BLOCO 2: REPOSITÓRIO DE ATIVIDADES (GITHUB) -->
   <div
     style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
-    <!-- TÍTULO DO BLOCO 2 -->
     <div
       style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 0; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
-      💻 REPOSITÓRIO DE ATIVIDADES NO GITHUB</div>
+      📋 INSTRUÇÕES PARA A ATIVIDADE PRÁTICA</div>
     <div style="padding: 10px;">
       <p
         style="font-size: 14px; line-height: 1.5; color: #333333; margin-top: 0; margin-bottom: 8px;">
-        Para esta unidade curricular, você deverá criar um <strong>repositório
-          privado no GitHub</strong>. É nele que você enviará e atualizará todas
-        as suas atividades avaliadas ao longo do semestre.</p>
-      <!-- CARD INTERNO 1: CRIAR REPOSITÓRIO PRIVADO -->
+        Siga o roteiro abaixo para validar as configurações do seu ambiente de
+        desenvolvimento e realizar a entrega da atividade no repositório do
+        GitHub.</p>
       <div
         style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
         <div
           style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 0; font-weight: bold; font-size: 0.85rem;">
-          📦 Como criar um repositório privado no GitHub</div>
+          ⚙️ Roteiro de execução</div>
         <div style="padding: 8px; background-color: #f8f9fa;">
-          <p
-            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
-            Para organizar suas entregas, você precisará criar um repositório
-            privado em sua conta do GitHub. Para isso, siga os passos abaixo:
-          </p>
           <ol
             style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
-            <li style="margin-bottom: 4px;">Acesse o <a
-                style="color: #32a041; font-weight: bold; text-decoration: underline;"
-                href="https://github.com" target="_blank"
-                rel="noopener noreferrer">GitHub</a> e faça login em sua conta.
+            <li style="margin-bottom: 4px;">Abra o VS Code e sincronize o seu
+              repositório da unidade curricular.</li>
+            <li style="margin-bottom: 4px;">Dentro do repositório da disciplina,
+              crie uma nova pasta exclusivamente para esta atividade prática
+              (ex.: <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">APxx</code>).
             </li>
-            <li style="margin-bottom: 4px;">No canto superior direito, clique no
-              ícone de mais (<strong>+</strong>) e selecione <strong>Novo
-                repositório / New repository</strong>.</li>
-            <li style="margin-bottom: 4px;">Configure as opções da página
-              conforme orientado:
-              <ul
-                style="margin-top: 4px; padding-left: 18px; list-style-type: disc;">
-                <li style="margin-bottom: 2px;"><strong>Nome do repositório /
-                    Repository name:</strong> Digite um nome para o repositório
-                  (ex: <code
-                    style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">meu-repositorio</code>
-                  ou <code
-                    style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">uc-pdi</code>).
-                </li>
-                <li style="margin-bottom: 2px;"><strong>Visibilidade /
-                    Visibility:</strong> Marque obrigatoriamente a opção
-                  <strong>Privado / Private</strong>.</li>
-                <li style="margin-bottom: 2px;"><strong>Inicialização /
-                    Initialize:</strong> Marque a opção <strong>Adicionar um
-                    arquivo README / Add a README file</strong>.</li>
-              </ul>
+            <li style="margin-bottom: 4px;">Crie o arquivo de script (ex.: <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">main.py</code>)
+              com o código abaixo:
+              <pre
+                style="background-color: #1e1e1e; color: #d4d4d4; font-family: Consolas, 'Courier New', monospace; font-size: 13px; padding: 8px 12px; border-radius: 4px; margin: 6px 0; overflow-x: auto; line-height: 1.4;">import os
+import os
+import sys
+import logging
+from pathlib import Path
+import datetime
+
+def setup_logger():
+    script_dir = Path(__file__).resolve().parent
+    log_dir = script_dir / "log"
+    if not log_dir.exists():
+        log_dir.mkdir(parents=True)
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = log_dir / f"environment_verification_{timestamp}.log"
+    logger = logging.getLogger("VerificadorAmbiente")
+    logger.setLevel(logging.INFO)
+    if not logger.handlers:
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
+        file_handler.setLevel(logging.INFO)
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+        file_handler.setFormatter(formatter)
+        console_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+    return logger, log_file
+
+def check_environment(logger):
+    logger.info("--- Iniciando verificação do ambiente ---")
+    current_dir = os.getcwd()
+    logger.info(f"Diretório atual de trabalho (CWD): {current_dir}")
+    python_executable = sys.executable
+    logger.info(f"Caminho do executável Python: {python_executable}")
+    in_venv = sys.prefix != sys.base_prefix
+    logger.info(f"Executando dentro de um Virtual Environment (venv): {'Sim' if in_venv else 'Não'}")
+    if in_venv:
+         logger.info(f"Caminho do Virtual Environment: {sys.prefix}")
+    logger.info("--- Fim da verificação do ambiente ---")
+
+def check_library_versions(logger):
+    logger.info("--- Iniciando verificação de bibliotecas ---")
+    try:
+        import cv2
+        import numpy
+        import matplotlib
+        logger.info(f"Versão do NumPy: {numpy.__version__}")
+        logger.info(f"Versão do Matplotlib: {matplotlib.__version__}")
+        logger.info(f"Versão do OpenCV: {cv2.__version__}")
+    except ImportError as e:
+        logger.error(f"Erro ao importar bibliotecas necessárias: {e}")
+        logger.error("Certifique-se de instalá-las usando 'pip install opencv-python numpy matplotlib'")
+        sys.exit(1)
+    logger.info("--- Fim da verificação de bibliotecas ---")
+
+if __name__ == "__main__":
+    logger, log_file_path = setup_logger()
+    logger.info(f"Log iniciado no arquivo: {log_file_path}")
+    check_environment(logger)
+    check_library_versions(logger)
+    logger.info("Processo concluído com sucesso.")</pre>
             </li>
-            <li style="margin-bottom: 4px;">Clique no botão <strong>Criar
-                repositório / Create repository</strong> ao final da página.
+            <li style="margin-bottom: 4px;">Execute o script disponibilizado
+              pelo professor (ex.: <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">main.py</code>).
             </li>
-          </ol>
-        </div>
-      </div>
-      <!-- CARD INTERNO 1: OBTER LINK DO REPOSITÓRIO -->
-      <div
-        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
-        <div
-          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 0; font-weight: bold; font-size: 0.85rem;">
-          🔗 Como obter o link (URL) do seu repositório</div>
-        <div style="padding: 8px; background-color: #f8f9fa;">
-          <p
-            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
-            Para que o professor tenha acesso ao repositório privado criado, é
-            necessário informar o seu endereço web (URL). Para isso, siga os
-            passos abaixo:</p>
-          <ol
-            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
-            <li style="margin-bottom: 4px;">No GitHub, navegue até a página
-              inicial do seu repositório privado.</li>
-            <li style="margin-bottom: 4px;">Clique na aba <strong>Código /
-                Code</strong> (canto superior esquerdo).</li>
-            <li style="margin-bottom: 4px;">Clique no botão verde <strong>Código
-                / Code</strong> e copie a URL no formato HTTPS (ex: <code
-                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">https://github.com/seu-usuario/meu-repositorio.git</code>).
+            <li style="margin-bottom: 4px;">Caso o script tenha sido executado
+              com sucesso, um arquivo de log deverá ser gerado.</li>
+            <li style="margin-bottom: 4px;">Envie o código para o GitHub por
+              meio das ações de <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">commit</code>
+              e <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">push</code>.
             </li>
-          </ol>
-        </div>
-      </div>
-      <!-- CARD INTERNO 2: CRIAÇÃO DE TOKEN DE ACESSO -->
-      <div
-        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
-        <div
-          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 0; font-weight: bold; font-size: 0.85rem;">
-          🔑 Como criar um Token de Acesso Pessoal (Fine-grained token)</div>
-        <div style="padding: 8px; background-color: #f8f9fa;">
-          <p
-            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
-            Para permitir que o professor tenha acesso seguro ao repositório
-            privado, será necessário gerar um Token de Acesso Pessoal
-            (Fine-grained token) no GitHub. Para isso, siga os passos abaixo:
-          </p>
-          <ol
-            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
-            <li style="margin-bottom: 4px;">No GitHub, clique na sua foto de
-              perfil (canto superior direito) e acesse <strong>Configurações /
-                Settings</strong> &gt; <strong>Configurações do desenvolvedor /
-                Developer settings</strong> &gt; <strong>Tokens de acesso
-                pessoal / Personal access tokens</strong> &gt; <strong>Tokens
-                refinados / Fine-grained tokens</strong>.</li>
-            <li style="margin-bottom: 4px;">Clique no botão <strong>Gerar novo
-                token / Generate new token</strong>.</li>
-            <li style="margin-bottom: 4px;">Configure os campos obrigatórios
-              conforme as orientações abaixo:
-              <ul
-                style="margin-top: 4px; padding-left: 18px; list-style-type: disc;">
-                <li style="margin-bottom: 2px;"><strong>Nome do token / Token
-                    name:</strong> Digite um nome identificador (ex: <code
-                    style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">Token-UC-IFSC</code>).
-                </li>
-                <li style="margin-bottom: 2px;"><strong>Descrição /
-                    Description:</strong> Descreva a finalidade (ex: <code
-                    style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">Token
-                    para envio das atividades da UC no IFSC</code>).</li>
-                <li style="margin-bottom: 2px;"><strong>Expiração /
-                    Expiration:</strong> Selecione o prazo desejado (ex: <code
-                    style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">Defina
-                    uma data final até o fim do semestre</code>).</li>
-                <li style="margin-bottom: 2px;"><strong>Acesso ao repositório /
-                    Repository access:</strong> Marque a opção <strong>Somente
-                    repositórios selecionados / Only select
-                    repositories</strong> e selecione o repositório privado
-                  específico da disciplina.</li>
-                <li style="margin-bottom: 2px;"><strong>Permissões /
-                    Permissions:</strong> Expanda a seção <strong>Permissões do
-                    repositório / Repository permissions</strong>, localize a
-                  permissão <strong>Conteúdos / Contents</strong> e altere para
-                  <strong>Leitura e escrita / Read and write</strong>
-                  (permitindo ler e enviar código/arquivos).</li>
-              </ul>
-            </li>
-            <li style="margin-bottom: 6px;">Clique em <strong>Gerar token /
-                Generate token</strong> no final da página e <strong>copie o
-                token gerado imediatamente</strong>, pois ele não será exibido
-              novamente!</li>
           </ol>
           <div
             style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
-            📌 <strong>Atenção:</strong> Este token será utilizado
-            exclusivamente pelo professor para acessar, acompanhar e avaliar as
-            atividades desenvolvidas. Você não precisará deste token para
-            acessar o seu próprio repositório.</div>
+            📌 <strong>Como saber se o procedimento foi
+              bem-sucedido?</strong><br>Acesse a página do seu repositório no
+            GitHub pelo navegador e verifique se a nova pasta e o arquivo do
+            script estão visíveis. Se ambos estiverem disponíveis, sua atividade
+            terá sido entregue com sucesso!</div>
         </div>
       </div>
-      <!-- CARD INTERNO 3: ESTRUTURA DE PASTAS -->
-      <div
-        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
-        <div
-          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 0; font-weight: bold; font-size: 0.85rem;">
-          📂 Estrutura de pastas recomendada</div>
-        <div style="padding: 8px; background-color: #f8f9fa;">
-          <p
-            style="font-size: 13px; line-height: 1.6; color: #495057; margin-top: 0; margin-bottom: 6px;">
-            Crie uma pasta dedicada para cada Atividade Prática (AP) (ex: <code
-              style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP01</code>,
-            <code
-              style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP02</code>)
-            e, quando a entrega exigir arquivos de mídia, utilize uma subpasta
-            <code
-              style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">img/</code>
-            para organizar suas imagens:</p>
-          <pre
-            style="background-color: #1e1e1e; color: #d4d4d4; font-family: Consolas, 'Courier New', monospace; font-size: 13px; padding: 8px 12px; border-radius: 4px; margin: 0; overflow-x: auto; line-height: 1.4;">meu-repositorio/
-├── AP01/
-│   ├── img/
-│   │   └── img01.png
-│   └── main.py
-├── AP02/
-│   ├── img/
-│   │   ├── img01.png
-│   │   └── img02.png
-│   └── main.py
-├── APxx/
-└── README.md</pre>
-        </div>
-      </div>
-      <!-- BOTÃO DE ENVIO MOVIDO PARA O CARD DO GITHUB --> <a
-        style="background-color: #32a041; color: #ffffff; font-size: 13px; font-weight: bold; text-decoration: none; padding: 5px 9px; border-radius: 4px; display: inline-block; margin-top: 2px;"
-        href="https://forms.gle/qf5UqgLHibHKUHaWA" target="_blank"
-        rel="noopener noreferrer"> 📝 ENVIAR REPOSITÓRIO E TOKEN </a>
     </div>
   </div>
-  <!-- BLOCO 4: ATENÇÃO AO PRAZO DE ENVIO (CARD EXTERNO) -->
+</div>
+
+  <div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <!-- BLOCO 3: AVISO IMPORTANTE (CARD EXTERNO) -->
   <div
     style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
     <!-- TÍTULO NO ESTILO DOS CARDS EXTERNOS -->
     <div
       style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 0; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
-      🕒 ATENÇÃO AO PRAZO DE ENVIO!</div>
+      ⚠️ AVISO IMPORTANTE</div>
     <div style="padding: 10px;">
-      <p
-        style="font-size: 14px; line-height: 1.5; color: #333333; margin-top: 0; margin-bottom: 8px;">
-        A entrega das atividades avaliativas é confirmada exclusivamente pelo
-        envio (<code
-          style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">git
-          push</code>) ao servidor do GitHub.</p>
-      <div
-        style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
-        📌 <strong>Atenção:</strong> Não basta fazer o <em>commit</em> no seu
-        computador; os arquivos devem estar disponíveis no GitHub até a data e o
-        horário limites. <span
-          style="color: #c8191e; font-weight: bold;">Alterações recebidas pelo
-          servidor após o prazo não serão consideradas para a avaliação.</span>
-        Faça o <em>push</em> com antecedência!</div>
+      <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
+        <strong>📁 A atividade deve ser realizada, obrigatoriamente, dentro da
+          pasta</strong>: <code
+          style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP01</code>.</p>
     </div>
   </div>
 </div>

@@ -1,0 +1,13 @@
+2026-11-18 22:32:23 - INFO - Log iniciado no arquivo: pdi164106-public/output/exercises/AP01/environment_verification_20261118_223223.log
+2026-11-18 22:32:23 - INFO - --- Iniciando verificação do ambiente ---
+2026-11-18 22:32:23 - INFO - Diretório atual de trabalho (CWD): /home/fernando/Documents/vsCode/pdi164106
+2026-11-18 22:32:23 - INFO - Caminho do executável Python: /home/fernando/Documents/vsCode/pdi164106/.venv/bin/python
+2026-11-18 22:32:23 - INFO - Executando dentro de um Virtual Environment (venv): Sim
+2026-11-18 22:32:23 - INFO - Caminho do Virtual Environment: /home/fernando/Documents/vsCode/pdi164106/.venv
+2026-11-18 22:32:23 - INFO - --- Fim da verificação do ambiente ---
+2026-11-18 22:32:23 - INFO - --- Iniciando verificação de bibliotecas ---
+2026-11-18 22:32:24 - INFO - Versão do NumPy: 2.5.4
+2026-11-18 22:32:24 - INFO - Versão do Matplotlib: 3.11.2
+2026-11-18 22:32:24 - INFO - Versão do OpenCV: 5.0.0
+2026-11-18 22:32:24 - INFO - --- Fim da verificação de bibliotecas ---
+2026-11-18 22:32:24 - INFO - Processo concluído com sucesso.

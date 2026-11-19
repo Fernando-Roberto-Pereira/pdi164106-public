@@ -6,5 +6,129 @@
   <title>Atividade prática</title>
 </head>
 <body>
+<div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 15px; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      🖼️ MANIPULAÇÃO DE CANAIS</div>
+    <div style="padding: 10px;">
+      <p
+        style="font-size: 14px; line-height: 1.5; color: #333333; margin-top: 0; margin-bottom: 12px;">
+        No processamento digital de imagens, a manipulação direta e a
+        reordenação dos canais de cor permitem alterar e destacar
+        características específicas de uma cena.</p>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📸 Captura da imagem</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin: 0;">
+            Antes de iniciar a programação, obtenha uma imagem digital autoral
+            utilizando a câmera do seu aparelho celular, uma câmera digital ou
+            outro dispositivo de captura de sua preferência. A foto deve ter
+            pelo menos um objeto de cor marcante.</p>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🎯 Objetivo</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Desenvolva um algoritmo em Python para executar os seguintes passos:
+          </p>
+          <ol
+            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Carregue a imagem colorida
+              utilizando a biblioteca OpenCV. Como o motor interno dessa
+              biblioteca realiza a leitura na ordem invertida (BGR), converta a
+              imagem para o padrão RGB.</li>
+            <li style="margin-bottom: 8px;">Defina um ponto de interesse, de sua
+              escolha, no objeto marcante da imagem (coordenadas <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">x</code> 
+              e <code
+                style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">y</code>).
+              Extraia os valores de intensidade dos três canais de cor nesse
+              ponto.</li>
+            <li style="margin-bottom: 8px;">Identifique quais são os canais de
+              menor e de maior intensidade no ponto de interesse.</li>
+            <li style="margin-bottom: 8px;">Substitua completamente a camada do
+              canal de menor intensidade pela camada do canal de maior
+              intensidade, e vice-versa.</li>
+            <li style="margin-bottom: 4px;">Para fins de verificação, desenhe um
+              pequeno círculo preto preenchido no ponto de interesse
+              exclusivamente na imagem original. A cópia alterada não deve
+              receber essa marcação.</li>
+          </ol>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📊 Apresentação dos resultados</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Utilize a biblioteca Matplotlib para construir uma figura disposta
+            em uma única linha com dois subgráficos posicionados lado a lado:
+          </p>
+          <ol
+            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+            <li style="margin-bottom: 4px;">Exiba a imagem original (com o ponto
+              de interesse).</li>
+            <li style="margin-bottom: 4px;">Exiba a imagem gerada (com as cores
+              trocadas).</li>
+          </ol>
+          <div
+            style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
+            📌 <strong>Atenção:</strong> Adicione títulos identificadores a cada
+            subgráfico e aplique os ajustes de espaçamento necessários para
+            evitar a sobreposição de eixos e textos na figura final.</div>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🖼️ Exemplo de resultado esperado</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 8px;">
+            Abaixo está representada a visualização final esperada para a figura
+            gerada pelo seu <em>script</em>:</p>
+          <div style="width: 100%; text-align: center;"><img class="img-fluid"
+              role="presentation"
+              src="https://moodle.ifsc.edu.br/draftfile.php/109506/user/draft/198415990/Figure_1%20%282%29.png"
+              alt="" width="999" height="299"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <!-- BLOCO 3: AVISO IMPORTANTE (CARD EXTERNO) -->
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <!-- TÍTULO NO ESTILO DOS CARDS EXTERNOS -->
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 0; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      ⚠️ AVISO IMPORTANTE</div>
+    <div style="padding: 10px;">
+      <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
+        <strong>📁 A atividade deve ser realizada, obrigatoriamente, dentro da
+          pasta</strong>: <code
+          style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP03</code>.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>

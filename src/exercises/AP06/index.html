@@ -6,5 +6,169 @@
   <title>Atividade prática</title>
 </head>
 <body>
+<div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 15px; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      📊 Realce do Contraste Baseado em ROI</div>
+    <div style="padding: 10px;">
+      <p
+        style="font-size: 14px; line-height: 1.5; color: #333333; margin-top: 0; margin-bottom: 12px;">
+        A normalização linear de intensidade guiada por uma Região de Interesse
+        (ROI) utiliza os limites mínimo e máximo de uma sub-região de referência
+        para parametrizar uma transformação aplicada globalmente à imagem. Essa
+        abordagem pode promover o realce do contraste e favorecer a visualização
+        de detalhes de interesse, preservando a proporcionalidade das variações
+        tonais nas regiões em que não ocorre saturação, ressalvados os efeitos
+        da quantização.</p>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📸 Captura da imagem</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin: 0;">
+            Antes de iniciar a programação, obtenha uma imagem digital autoral
+            utilizando a câmera do seu aparelho celular, uma câmera digital ou
+            outro dispositivo de captura de sua preferência.</p>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🎯 Objetivo</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Desenvolva um algoritmo em Python para executar os seguintes passos:
+          </p>
+          <ol
+            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+            <li style="margin-bottom: 8px;">Carregue a imagem em escala de cinza
+              utilizando a biblioteca OpenCV.</li>
+            <li style="margin-bottom: 8px;">Extraia uma Região de Interesse
+              (ROI).</li>
+            <li style="margin-bottom: 8px;">Obtenha os valores de intensidade
+              mínima e máxima na ROI e calcule os parâmetros de escala linear
+              <span class="selected">(α</span><span class="selected"> e
+                β</span><span class="selected">) </span>para remapeamento no
+              intervalo [0, 255]. 
+              <p style="margin-top: 8px; margin-bottom: 4px;">Para realizar o
+                cálculo de <span class="selected"
+                  style="text-align: initial;">α</span><span class="selected"
+                  style="text-align: initial;"> e β</span>, utilize a seguinte
+                função:</p>
+              <pre><code>def calcular_parametros_escala(i_min, i_max):
+    alpha = 255.0 / (i_max - i_min)
+    beta = -i_min * alpha
+    return alpha, beta</code></pre>
+              <div class="param-box">
+                <ul>
+                  <li><strong>Argumentos de entrada:</strong>
+                    <ul>
+                      <li><code>i_min</code>: Menor valor de intensidade de
+                        pixel observado dentro da ROI.</li>
+                      <li><code>i_max</code>: Maior valor de intensidade de
+                        pixel observado dentro da ROI.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Retornos obtidos:</strong>
+                    <ul>
+                      <li><code>alpha</code>: Fator de escala/ganho linear
+                        utilizado para expandir a faixa dinâmica de contraste.
+                      </li>
+                      <li><code>beta</code>: Valor de deslocamento
+                        (<em>offset</em>) ajustado para alinhar o menor valor de
+                        intensidade ao nível zero.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li style="margin-bottom: 8px;">Aplique a transformação linear à
+              imagem. <strong data-path-to-node="0"
+                data-index-in-node="0"><strong data-path-to-node="5"
+                  data-index-in-node="0">Dica:</strong> Não é possível utilizar
+                a função <code data-path-to-node="5"
+                  data-index-in-node="39">cv2.normalize()</code>, uma vez que
+                ela determina o menor e o maior valor de intensidade com base na
+                imagem de entrada.</strong></li>
+            <li style="margin-bottom: 8px;">Compute a média e o desvio padrão da
+              imagem original, da ROI e da imagem normalizada.</li>
+            <li style="margin-bottom: 8px;">Gere uma cópia da imagem original
+              convertida para o espaço de cor RGB e desenhe um retângulo
+              vermelho demarcando a ROI extraída.</li>
+          </ol>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📊 Apresentação dos resultados</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Utilize a biblioteca Matplotlib para construir uma figura disposta
+            em uma grade de 2 linhas por 3 colunas:</p>
+          <ol
+            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+            <li style="margin-bottom: 4px;">Na primeira linha, exiba lado a lado
+              a imagem original demarcada com o retângulo da ROI, a sub-imagem
+              da ROI extraída e a imagem normalizada, apresentando abaixo de
+              cada subgráfico a média e o desvio padrão correspondentes.</li>
+            <li style="margin-bottom: 4px;">Na segunda linha, exiba o histograma
+              de frequência das intensidades de pixels de cada etapa alinhado
+              com a imagem superior correspondente.</li>
+          </ol>
+          <div
+            style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
+            📌 <strong>Atenção:</strong> Adicione títulos identificadores a cada
+            subgráfico, configure a escala logarítmica dos histogramas e aplique
+            os ajustes de espaçamento necessários para evitar a sobreposição de
+            eixos e textos na figura final.</div>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🖼️ Exemplo de resultado esperado</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 8px;">
+            Abaixo está representada a visualização final esperada para a figura
+            gerada pelo seu <em>script</em>:</p>
+          <div style="width: 100%; text-align: center;"><img class="img-fluid"
+              role="presentation"
+              src="https://moodle.ifsc.edu.br/draftfile.php/109506/user/draft/855162670/Figure_1%20%283%29.png"
+              alt="" width="1364" height="648"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <!-- BLOCO 3: AVISO IMPORTANTE (CARD EXTERNO) -->
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <!-- TÍTULO NO ESTILO DOS CARDS EXTERNOS -->
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 0; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      ⚠️ AVISO IMPORTANTE</div>
+    <div style="padding: 10px;">
+      <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
+        <strong>📁 A atividade deve ser realizada, obrigatoriamente, dentro da
+          pasta</strong>: <code
+          style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP06</code>.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>

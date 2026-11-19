@@ -6,5 +6,153 @@
   <title>Atividade prática</title>
 </head>
 <body>
+  <div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 15px; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      📊 Redução de Ruído e Avaliação de Filtros</div>
+    <!-- Início do contêiner que garante o espaçamento de 10px -->
+    <div style="padding: 10px;">
+      <p
+        style="font-size: 14px; line-height: 1.5; color: #333333; margin-top: 0; margin-bottom: 12px;">
+        O ruído gaussiano pode degradar uma imagem e dificultar a observação de
+        seus detalhes. Filtros espaciais, como o Filtro de Média e o Filtro
+        Gaussiano, suavizam variações locais; entretanto, a intensidade dessa
+        suavização depende do tamanho do kernel e, no Filtro Gaussiano, também
+        do desvio padrão (σ). Nesta atividade, diferentes configurações serão
+        avaliadas quantitativamente em relação à imagem original por meio das
+        métricas <em>Mean Squared Error </em>(MSE) e <em>Peak Signal-to-Noise
+          Ratio</em> (PSNR).</p>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📸 Captura da imagem</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin: 0;">
+            Antes de iniciar a programação, obtenha uma imagem digital autoral
+            utilizando a câmera do seu aparelho celular, uma câmera digital ou
+            outro dispositivo de captura de sua preferência.</p>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🎯 Objetivo</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Desenvolva um algoritmo em Python para executar os seguintes passos:
+          </p>
+          <div
+            style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
+            📌 <strong>Atenção:</strong> Está disponível no <a
+              href="https://github.com/Fernando-Roberto-Pereira/pdi164106-public"
+              target="_blank" rel="noopener">GitHub</a> um código de exemplo
+            para auxiliar no desenvolvimento da atividade. Ressalto que esse
+            material serve apenas como uma sugestão de apoio; o seu uso não é
+            obrigatório, e vocês têm autonomia para construir suas próprias
+            soluções.</div>
+        </div>
+        <ol
+          style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+          <li>Carregue a imagem original em escala de cinza utilizando a
+            biblioteca OpenCV e gere uma imagem contaminada por ruído Gaussiano,
+            utilizando <strong>média 30</strong> e <strong>desvio padrão (σ)
+              40</strong>.</li>
+          <li>Calcule o MSE e o PSNR entre a imagem original e a imagem ruidosa.
+            Use esses valores como referência para avaliar os resultados da
+            filtragem.</li>
+          <li>Aplique o Filtro de Média para raios de 1 a 5. <strong>Total de
+              execuções: 5</strong>.</li>
+          <li>Aplique o Filtro Gaussiano para raios de 1 a 5 e valores de σ de
+            0,1 a 8,0, com incremento de 0,1. <strong>Sugestão</strong>, utilize
+            um <i data-path-to-node="0" data-index-in-node="19">Grid Search</i>:
+            algoritmo de <strong data-path-to-node="0"
+              data-index-in-node="49">otimização discreta por busca
+              exaustiva</strong> (força bruta) executado sobre um <strong
+              data-path-to-node="0" data-index-in-node="122">produto cartesiano
+              finito</strong>. <strong>Total de execuções: 400</strong>.</li>
+          <li>Para a imagem filtrada, calcule o MSE e o PSNR em relação à imagem
+            original. Calcule também os ganhos em relação à imagem ruidosa: MSE
+            e PSNR.</li>
+          <li>Identifique a melhor configuração do Filtro de Média, a melhor do
+            Filtro Gaussiano, considerando o maior ganho de MSE.</li>
+          <li>Gere a imagem filtrada correspondente à melhor configuração geral
+            para apresentá-la junto à imagem original e à imagem com ruído.</li>
+        </ol>
+      </div>
+      <!-- A </div> que estava aqui foi removida -->
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          📊 Apresentação dos resultados</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 6px;">
+            Utilize a biblioteca Matplotlib para construir uma figura disposta
+            em uma grade de 3 linhas por 6 colunas, organizando os painéis
+            conforme descrito:</p>
+          <ol
+            style="font-size: 13px; line-height: 1.6; color: #333333; margin: 0; padding-left: 20px;">
+            <li>Na primeira linha, apresente a imagem original, a imagem com
+              ruído Gaussiano e a imagem filtrada pela melhor configuração
+              geral.</li>
+            <li>Na segunda linha, apresente os ganhos com a métrica MSE para as
+              configurações do Filtro de Média e do Filtro Gaussiano.</li>
+            <li>Na terceira linha, apresente, de modo equivalente, os ganhos da
+              métrica PSNR para os dois filtros.</li>
+            <li>Destaque em cada gráfico a configuração com maior ganho da
+              métrica correspondente e informe seus parâmetros e seu valor.</li>
+          </ol>
+          <div
+            style="margin-top: 8px; padding: 6px 10px; background-color: #e2e8f0; border-left: 4px solid #6c757d; border-radius: 2px; font-size: 12px; line-height: 1.4; color: #1e293b;">
+            📌 <strong>Atenção:</strong> Adicione títulos identificadores a cada
+            subgráfico, aplique os ajustes de espaçamento necessários para
+            evitar a sobreposição de eixos e textos na figura final.</div>
+        </div>
+      </div>
+      <div
+        style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e9ecef; border-left: 6px solid #6c757d; border-radius: 4px; padding: 0; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+        <div
+          style="background-color: #6c757d; color: #ffffff; padding: 4px 15px 4px 15px; font-weight: bold; font-size: 0.85rem;">
+          🖼️ Exemplo de resultado esperado</div>
+        <div style="padding: 8px; background-color: #f8f9fa;">
+          <p
+            style="font-size: 13px; line-height: 1.5; color: #212529; margin-top: 0; margin-bottom: 8px;">
+            Abaixo está representada a visualização final esperada para a figura
+            gerada pelo seu <em>script</em>:</p>
+          <div style="width: 100%; text-align: center;"><img class="img-fluid"
+              role="presentation"
+              src="https://moodle.ifsc.edu.br/draftfile.php/109506/user/draft/554048179/Figure_1%20%284%29.png"
+              alt="" width="1364" height="648"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Fechamento movido para cá: encerra a <div style="padding: 10px;"> -->
+  </div>
+</div>
+  <div
+  style="width: 100%; margin: 16px 0; box-sizing: border-box; font-family: 'Open Sans', Arial, sans-serif;">
+  <!-- BLOCO 3: AVISO IMPORTANTE (CARD EXTERNO) -->
+  <div
+    style="width: 100%; box-sizing: border-box; background-color: #ffffff; border: 1px solid #e0e0e0; border-left: 6px solid #32a041; border-radius: 4px; padding: 0; margin-bottom: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #000000; overflow: hidden;">
+    <!-- TÍTULO NO ESTILO DOS CARDS EXTERNOS -->
+    <div
+      style="background-color: #32a041; color: #ffffff; padding: 5px 15px 5px 0; font-weight: bold; font-size: 0.95rem; text-transform: uppercase;">
+      ⚠️ AVISO IMPORTANTE</div>
+    <div style="padding: 10px;">
+      <p style="font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
+        <strong>📁 A atividade deve ser realizada, obrigatoriamente, dentro da
+          pasta</strong>: <code
+          style="background-color: #e9ecef; color: #343a40; padding: 2px 6px; border-radius: 4px; font-family: Consolas, 'Courier New', monospace; font-size: 12px; border: 1px solid #ced4da;">AP07</code>.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
